@@ -22,9 +22,10 @@ requirements:
     - poetry-core >=1.0.0
     - pip
   run:
-    - python >={{ python_min }},<3.13
-    - financetoolkit >=1.3.5,<2.0.0
-    - pandas >=2.1.0,<3.0.0
+    - python >={{ python_min }},<3.14
+    - financetoolkit >=2.0.0,<3.0.0
+    - pandas >=2.2.0,<3.0.0
+    - requests >=2.32.3,<3.0.0
 
 test:
   imports:
