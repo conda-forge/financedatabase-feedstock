@@ -1,6 +1,6 @@
 {% set python_min = "3.10" %}
 {% set name = "financedatabase" %}
-{% set version = "2.3.0" %}
+{% set version = "2.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/financedatabase-{{ version }}.tar.gz
-  sha256: 638feded7530fae88cffa399f992806f5d861491da26b4057dedba6feceaae52
+  sha256: cec287db5f7e74a6c80b6066a903ca7a52da9eb444853b25f33ea123979f17a1
 
 build:
   noarch: python
