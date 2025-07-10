@@ -1,0 +1,65 @@
+schema_version: 1
+
+context:
+  python_min: 3.10
+  name: financedatabase
+  version: 2.3.1
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/financedatabase-${{ version }}.tar.gz
+  sha256: cec287db5f7e74a6c80b6066a903ca7a52da9eb444853b25f33ea123979f17a1
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools <65.5.0
+    - poetry-core >=1.0.0
+    - pip
+  run:
+    - python >=${{ python_min }},<3.14
+    - financetoolkit >=2.0.3,<3.0.0
+    - pandas >=2.2.0,<3.0.0
+    - requests >=2.32.3,<3.0.0
+    - yfinance
+    # from pandas[computation]
+    - scipy >=1.12.0
+    - xarray >=2024.1.1
+    # from pandas[performance]
+    - bottleneck >=1.3.6
+    - numba >=0.59.0
+    - numexpr >=2.9.0
+    # from pandas[plot]
+    - matplotlib-base >=3.8.3
+    # from pandas[excel]
+    - odfpy >=1.4.1
+    - openpyxl >=3.1.2
+    - python-calamine >=0.1.7
+    - pyxlsb >=1.0.10
+    - xlrd >=2.0.1
+    - xlsxwriter >=3.2.0
+
+tests:
+  - python:
+      imports:
+        - financedatabase
+      pip_check: true
+      python_version: ${{ python_min }}.*
+
+about:
+  summary: Database of equities, ETFs, funds, indices, currencies, cryptocurrencies, and money markets.
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/JerBouma/FinanceDatabase
+
+extra:
+  recipe-maintainers:
+    - thewchan
