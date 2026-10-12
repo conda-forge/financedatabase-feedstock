@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: financedatabase
-  version: "2.4.0"
+  version: "2.5.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/financedatabase-${{ version }}.tar.gz
-  sha256: a2af519e64e68baa52d369b49a8a16b09e77de0f20bb58e37243fbed225f2e87
+  sha256: 63c2c001c267c55a3e7145dac5cd28ee67df5742bd9a4c9dd84db130a7371cf2
 
 build:
   number: 0
@@ -24,7 +24,11 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
-    - financetoolkit >=2.0.3,<3.0.0
+    - financetoolkit >=2.2.1,<3.0.0
+    - numpy >=1.26
+    - pandas >=3.0
+    - polars >=2.0.0
+    - requests >=2.32
 
 tests:
   - python:
