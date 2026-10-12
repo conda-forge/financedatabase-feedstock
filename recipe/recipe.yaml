@@ -24,7 +24,11 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
-    - financetoolkit >=2.0.3,<3.0.0
+    - financetoolkit >=2.2.1,<3.0.0
+    - numpy >=1.26
+    - pandas >=3.0
+    - polars >=2.0.0
+    - requests >=2.32
 
 tests:
   - python:
