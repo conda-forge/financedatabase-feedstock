@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: financedatabase
-  version: "2.5.1"
+  version: "2.5.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/financedatabase-${{ version }}.tar.gz
-  sha256: 318d55dea083f07af0d77e0d74dbbd171c6018f8793449455c35ece3edf0c3aa
+  sha256: 8c91c2f3f0aa70734153806becec7f2d47eb49dba8ead42985b55dfe63728f0c
 
 build:
   number: 0
